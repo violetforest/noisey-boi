@@ -6,7 +6,7 @@ export function spCode() {
     box(vec3(.5, .5, .2));
     //difference();
     //intersect();
-    mixGeo(sin(time) + 0.4);
+    mixGeo(0.4);
     displace(0, 0, 0);
     //displace(xPosition, yPosition, zPosition);
     torus(.4, .1);
