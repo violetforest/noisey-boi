@@ -1,21 +1,15 @@
 // Put your shader park code inside the spCode function
 
 export function spCode() {
-    let s = getSpace();
-    color(s);
     rotateX(PI/2 + sin(time));
     sphere(0.2);
     box(vec3(.5, .5, .2));
     //difference();
     //intersect();
-    mixGeo(0.4);
+    mixGeo(sin(time) + 0.4);
     displace(0, 0, 0);
-
-      //displace(xPosition, yPosition, zPosition);
+    //displace(xPosition, yPosition, zPosition);
     torus(.4, .1);
-  
- // mirrorN(3, .13);
-//  sphere(.1);
 }
 
 // Hola
