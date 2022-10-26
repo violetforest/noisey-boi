@@ -13,6 +13,7 @@ export function spCode() {
     metal(0.4);
     torus(.4, .1);
   
+  mirrorN(3, .13);
   sphere(.1);
 }
 
