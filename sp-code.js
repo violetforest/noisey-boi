@@ -6,10 +6,15 @@ export function spCode() {
     box(vec3(.5, .5, .2));
     //difference();
     //intersect();
-    mixGeo(0.4);
+    mixGeo(cos(time) + 0.4);
     displace(0, 0, 0);
-    //displace(xPosition, yPosition, zPosition);
+
+      //displace(xPosition, yPosition, zPositio
+    metal(0.4);
     torus(.4, .1);
+  
+  mirrorN(3, .13);
+  sphere(.1);
 }
 
 // Hola
