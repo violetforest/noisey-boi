@@ -4,7 +4,7 @@ export function spCode() {
     let waves = shape(() => {
     let scale = input(1., 0.0, 10.);
     let s = getSpace();
-    let n = (fractalNoise(s*scale+vec3(0,0,time)) + fractalNoise(s*scale+vec3(0,0,time)));
+    let n = fractalNoise(s*scale+vec3(0,0,time) + fractalNoise(s*scale+vec3(0,0,time*0.2)));
     let r = getRayDirection();
   
     color(s * vec3(n) * normal + fresnel(3.7));
@@ -16,7 +16,7 @@ export function spCode() {
     box(vec3(.5, .5, .2));
     //difference();
     ///intersect();
-    mixGeo(0.4);
+    mixGeo(0.1);
     displace(0, 0, 0);
 
     rotateZ(r.x*15+time*.5);
@@ -24,7 +24,7 @@ export function spCode() {
   
     //displace(xPosition, yPosition, zPosition)
     shine(noise(s*5)*.8+.2);
-    metal(noise(s*5)*.8+.2);
+    metal(noise(s*50)*.8+.2);
   
     torus(.4, .1)
    
