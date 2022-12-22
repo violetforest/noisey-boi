@@ -27,14 +27,14 @@ export function spCode() {
   
     rotateX(PI/2 + sin(r.x * sin(a + time)) + a * r.x);
   
-    color(vec3(n)+vec3(red, green + r.x, blue)* 0.1 * r.y+ fresnel(h));
+    color(vec3(n)+vec3(red, green + r.x, blue)*0.1 * r.y+ fresnel(h + r.x));
     box(vec3(f+time, f+time, .2));
   
     mirrorN(g, 0.3);
     mixGeo(0.2);
 
     rotateZ(r.x * e);
-    shine(.8+.2);
+    shine(noise(s*5)*.8+.2);
     torus(.4+.1*n, .1);
   });
   

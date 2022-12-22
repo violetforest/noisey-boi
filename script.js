@@ -2,6 +2,7 @@ import { Scene, PerspectiveCamera, WebGLRenderer, Color} from './three.module.js
 import { createSculpture } from './shader-park-core.esm.js';
 import { spCode } from './sp-code.js';
 import {TrackballControls} from './TrackballControls.js'
+
 // import { OrbitControls } from './OrbitControls.js'
 
 // If you want to create OBJKT's with different seeds,
@@ -9,12 +10,8 @@ import {TrackballControls} from './TrackballControls.js'
 // This values will only be injected once the piece
 // has been minted they will not work locally.
 // If the user is not sync, the viewer comes in as false.
-const creator = new URLSearchParams(window.location.search).get('creator')
-const viewer = new URLSearchParams(window.location.search).get('viewer')
 
-console.log('NFT created by', creator);
-console.log('NFT viewed by', viewer);
-
+console.log('NFT created by Violet Forest (Violeta Lopez)');
 
 let scene = new Scene();
 let params = { time: 0 };
@@ -25,7 +22,7 @@ camera.position.z = 2;
 let renderer = new WebGLRenderer({ antialias: true });
 renderer.setSize( window.innerWidth, window.innerHeight );
 renderer.setPixelRatio( window.devicePixelRatio );
-renderer.setClearColor( new Color(1, 1, 1), 1 );
+renderer.setClearColor( 0x000000, 0 );
 document.body.appendChild( renderer.domElement );
 
 //Shader Park setup
@@ -37,7 +34,7 @@ scene.add(mesh);
 
 let controls = new TrackballControls( camera, renderer.domElement );
 
-controls.rotateSpeed = 1.2;
+controls.rotateSpeed = 5.0;
 controls.zoomSpeed = 1.2;
 // controls.panSpeed = 0.8;
 controls.noZoom = true;
