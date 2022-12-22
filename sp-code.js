@@ -28,7 +28,7 @@ export function spCode() {
   
     rotateX(PI/2 + (sin(a + time)) + a);
   
-    color(vec3(nn)+vec3(red, green, blue)* fresnel(h));
+    color(vec3(n)+vec3(red, green, blue)* fresnel(h));
     box(vec3(f+time, f+time, .2));
   
     mirrorN(g, 0.3);
