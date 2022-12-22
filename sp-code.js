@@ -22,7 +22,7 @@ export function spCode() {
   let wings = shape(() => {
     let s = getSpace();
     let r = getRayDirection();
-    let n = noise(s*scale+vec3(2.0,5.9,time*0.1) + noise(s*scale+vec3(0, 9.0,time*b)));
+    let n = noise(noise(s*scale+vec3(0, 9.0,time*b)));
     let nn = noise(s*scale+vec3(0, 9.0,b));
     setStepSize(.2);
   
@@ -35,7 +35,7 @@ export function spCode() {
     mixGeo(0.2);
 
     rotateZ(r.x * e);
-    torus(.4+.1*n, .1);
+    torus(.4+.1*nn, .1);
   });
   
   wings();
