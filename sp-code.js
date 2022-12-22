@@ -15,17 +15,17 @@ export function spCode() {
   let g = randomIntFromInterval(1.0, 1.5);
   let h = randomIntFromInterval(1.2, 2.5);
   
-  let red = randomIntFromInterval(0.5, 3.5);
+  let red = randomIntFromInterval(0.5, 2.5);
   let green = randomIntFromInterval(0.5, 2.3);
   let blue = randomIntFromInterval(0.5, 5.5);
   
   let wings = shape(() => {
     let s = getSpace();
     let r = getRayDirection();
-    let n = noise(s*scale+vec3(2.0,5.9,time*0.1) + noise(s*scale+vec3(0, 9.0,time*b)));
+    let n = noise(s*scale+vec3(2.0,5.9,0.1) + noise(s*scale+vec3(0, 9.0,b)));
     setStepSize(.2);
   
-    rotateX(PI/2 + (r.x * sin(a + time)) + a * r.x);
+    rotateX(PI/2 + (sin(a + time)) + a);
   
     color(vec3(n)+vec3(red, green, blue)* fresnel(h));
     box(vec3(f+time, f+time, .2));
