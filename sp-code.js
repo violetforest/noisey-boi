@@ -22,10 +22,10 @@ export function spCode() {
   let wings = shape(() => {
     let s = getSpace();
     let r = getRayDirection();
-    let n = noise(s*scale+vec3(2.0,5.9,time*0.1) + noise(s*scale+vec3(0, r.x+9.0,time*b)));
+    let n = noise(s*scale+vec3(2.0,5.9,time*0.1) + noise(s*scale+vec3(0, 9.0,time*b)));
     setStepSize(.2);
   
-    rotateX(PI/2 + sin(r.x * sin(a + time)) + a * r.x);
+    rotateX(PI/2 + (r.x * sin(a + time)) + a * r.x);
   
     color(vec3(n)+vec3(red, green + r.x, blue)* 0.1 * fresnel(h));
     box(vec3(f+time, f+time, .2));
