@@ -35,7 +35,7 @@ export function spCode() {
     mixGeo(0.2);
 
     rotateZ(r.x * e);
-    torus(.4+.1*n, .1);
+    torus(.4+.1*nn, .1);
   });
   
   wings();
