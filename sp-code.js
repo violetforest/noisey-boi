@@ -7,7 +7,7 @@ export function spCode() {
     return Math.floor(fxrand()* (max - min + 1) + min)
   }
   
-  let scale = randomIntFromInterval(2.0, 4.0);
+  let scale = randomIntFromInterval(1.0, 2.0);
   let a = randomIntFromInterval(0, 3.0);
   let b = randomIntFromInterval(0, 5.0);
   let e = randomIntFromInterval(0, 5.0);
@@ -15,14 +15,14 @@ export function spCode() {
   let g = randomIntFromInterval(1.0, 1.2);
   let h = randomIntFromInterval(1.2, 2.5);
   
-  let red = randomIntFromInterval(0.5, 2.0);
-  let green = randomIntFromInterval(0.5, 2.3);
-  let blue = randomIntFromInterval(0.5, 5.5);
+  let red = randomIntFromInterval(0.8, 2.0);
+  let green = randomIntFromInterval(0.8, 2.3);
+  let blue = randomIntFromInterval(0.8, 5.5);
   
   let wings = shape(() => {
     let s = getSpace();
     let r = getRayDirection();
-    let n = noise((s*scale+vec3(0, 9.0,time*b)) + (s*scale));
+    let n = noise((s*scale+vec3(0, 3.0,time*b)) + (s));
     setStepSize(.2);
   
     rotateX(PI/2 + (sin(a + time)) + a);
